@@ -1,0 +1,108 @@
+body {
+    /*type d'ecriture*/
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* En-tête */
+header {
+    background-color: skyblue;
+    color: purple;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Menu de navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
+
+nav a {
+    color: white;
+    padding: 10px 20px;
+    /* le menu est souligné mais avec le none il est pas souligné*/
+    text-decoration: none;
+    /*taille de l'écriture*/
+    font-size: 18px;
+   
+}
+
+nav a:hover {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+/* Icône de menu hamburger (pour petit écran) */
+#menu-toggle {
+    /* ca veux dire que le carré est pas la*/
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: red;
+    background-color: #444;
+}
+
+/* Contenu des sections */
+.content {
+    /*espace qu'il y a à l'interieur*/
+    padding: 20px; 
+    background-color: white;
+    /* espace qu'il y a à l'exterieur*/
+    margin: 20px;
+    /*type de bordure avec les coins arrondi*/
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Pied de page */
+footer {
+    background-color:skyblue;
+    color: purple;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsivité : afficher l'icône hamburger et masquer le menu normal sur petits écrans */
+@media (max-width: 768px) {
+
+    /* Masquer le menu de navigation par défaut */
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Afficher l'icône hamburger */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Lorsque le menu est "activé" (checkbox checked), afficher le menu */
+    #menu-toggle:checked+.menu-icon+nav {
+        display: flex;
+
+    }
+.menu {
+    flex-direction: column;
+
+}
+.menu a:hover { /* Lorsque mon curseur passe au dessus du lien */
+    background-color: red ;
+    transform: scale(1.05); /* Agrandi légèrement le menu séléectionné */
+}
+}
